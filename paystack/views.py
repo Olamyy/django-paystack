@@ -29,7 +29,7 @@ class FailedView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         if settings.PAYSTACK_FAILED_URL == 'paystack:failed_page':
             return reverse(settings.PAYSTACK_FAILED_URL)
-        return settings.PAYSTACK_FAILED_URL
+        return reverse(settings.PAYSTACK_FAILED_URL)
 
 
 class SuccessView(RedirectView):
@@ -38,4 +38,4 @@ class SuccessView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         if settings.PAYSTACK_SUCCESS_URL == 'paystack:success_page':
             return reverse(settings.PAYSTACK_SUCCESS_URL)
-        return settings.PAYSTACK_SUCCESS_URL
+        return reverse(settings.PAYSTACK_SUCCESS_URL)
